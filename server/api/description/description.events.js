@@ -1,10 +1,10 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-var UserEvents = new EventEmitter();
+var DescriptionEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-UserEvents.setMaxListeners(0);
+DescriptionEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -22,10 +22,10 @@ function registerEvents(User) {
 
 function emitEvent(event) {
   return function(doc) {
-    UserEvents.emit(`${event}:${doc._id}`, doc);
-    UserEvents.emit(event, doc);
+    DescriptionEvents.emit(`${event}:${doc._id}`, doc);
+    DescriptionEvents.emit(event, doc);
   };
 }
 
 export {registerEvents};
-export default UserEvents;
+export default DescriptionEvents;
