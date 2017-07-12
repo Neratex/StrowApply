@@ -7,6 +7,7 @@ export class MainController {
   socket;
   awesomeThings = [];
   newThing = '';
+  desc = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -15,6 +16,7 @@ export class MainController {
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('description');
     });
   }
 
@@ -24,6 +26,12 @@ export class MainController {
         this.awesomeThings = response.data;
         this.socket.syncUpdates('thing', this.awesomeThings);
       });
+
+      this.$http.get('/api/description')
+        .then(r => {
+          this.desc = r.data;
+          this.socket.syncUpdates('description', this.desc);
+        });
   }
 
   addThing() {
@@ -37,6 +45,10 @@ export class MainController {
 
   deleteThing(thing) {
     this.$http.delete(`/api/things/${thing._id}`);
+  }
+
+  description() {
+    return desc;
   }
 }
 
