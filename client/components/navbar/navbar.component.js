@@ -7,7 +7,17 @@ export class NavbarComponent {
   menu = [{
     title: 'Home',
     state: 'main'
+  }, {
+    title: 'Developer',
+    state: 'developer'
+  }, {
+    title: 'Moderator',
+    state: 'moderator'
+  }, {
+    title: 'Builder',
+    state: 'builder'
   }];
+  
   isLoggedIn: Function;
   isAdmin: Function;
   getCurrentUser: Function;
