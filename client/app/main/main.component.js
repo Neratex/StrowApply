@@ -5,8 +5,6 @@ import routing from './main.routes';
 export class MainController {
   $http;
   socket;
-  awesomeThings = [];
-  newThing = '';
   desc = '';
 
   /*@ngInject*/
