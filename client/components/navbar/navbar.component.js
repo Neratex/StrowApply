@@ -17,7 +17,7 @@ export class NavbarComponent {
     title: 'Builder',
     state: 'builder'
   }];
-  
+
   isLoggedIn: Function;
   isAdmin: Function;
   getCurrentUser: Function;

@@ -16,6 +16,6 @@ export default class AdminController {
   }
 
   updateDescription(description) {
-
+    this.desc = description;
   }
 }
