@@ -7,7 +7,7 @@ export class MainController {
   socket;
   awesomeThings = [];
   newThing = '';
-  desc = 'Test';
+  desc = '';
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -15,26 +15,18 @@ export class MainController {
     this.socket = socket;
 
     $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
       socket.unsyncUpdates('description');
     });
   }
 
   $onInit() {
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-        this.socket.syncUpdates('thing', this.awesomeThings);
-      });
-
-      this.$http.get('/api/description')
-        .then(r => {
+      this.$http.get('/api/description').then(r => {
           this.desc = r.data;
           this.socket.syncUpdates('description', this.desc);
         });
   }
 
-  addThing() {
+  /*addThing() {
     if(this.newThing) {
       this.$http.post('/api/things', {
         name: this.newThing
@@ -45,11 +37,7 @@ export class MainController {
 
   deleteThing(thing) {
     this.$http.delete(`/api/things/${thing._id}`);
-  }
-
-  description() {
-    return desc;
-  }
+  }*/
 }
 
 export default angular.module('strowApplyApp.main', [uiRouter])
