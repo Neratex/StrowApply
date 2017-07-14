@@ -18,10 +18,10 @@ export class MainController {
   }
 
   $onInit() {
-      this.$http.get('/api/description').then(r => {
-          this.desc = r.data;
-          this.socket.syncUpdates('description', this.desc);
-        });
+    this.$http.get('/api/description').then(r => {
+      this.desc = r.data;
+      this.socket.syncUpdates('description', this.desc);
+    });
   }
 
   /*addThing() {

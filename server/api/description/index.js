@@ -1,6 +1,8 @@
 'use strict';
 
-import {Router} from 'express';
+import {
+  Router
+} from 'express';
 import * as controller from './description.controller';
 
 var router = new Router();

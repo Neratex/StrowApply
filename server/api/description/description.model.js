@@ -1,7 +1,9 @@
 'use strict';
 
 import mongoose from 'mongoose';
-import {registerEvents} from './description.events';
+import {
+  registerEvents
+} from './description.events';
 
 var DescriptionSchema = new mongoose.Schema({
   desc: String

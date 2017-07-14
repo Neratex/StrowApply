@@ -28,13 +28,13 @@ export function ApplicationService($location, $http, $q, Util, User) {
       whyyou
     }, callback ? : Function) {
       return $http.post('/application/local', {
-        name,
-        age,
-        about,
-        times,
-        why,
-        whyyou
-      })
+          name,
+          age,
+          about,
+          times,
+          why,
+          whyyou
+        })
         .then(user => {
           safeCb(callback)(null, user);
           return user;
@@ -47,12 +47,12 @@ export function ApplicationService($location, $http, $q, Util, User) {
     },
     createUser(user, callback ? : Function) {
       return User.save(user, function(data) {
-        currentApplication = Application.get();
-        return safeCb(callback)(null, user);
-      }, function(err) {
-        Auth.logout();
-        return safeCb(callback)(err);
-      })
+          currentApplication = Application.get();
+          return safeCb(callback)(null, user);
+        }, function(err) {
+          Auth.logout();
+          return safeCb(callback)(err);
+        })
         .$promise;
     }
   };

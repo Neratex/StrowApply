@@ -6,7 +6,6 @@ export default class BuilderController {
   /*@ngInject*/
 
   sendApplication(form) {
-    if (form.$valid) {
-    }
+    if (form.$valid) {}
   }
 }

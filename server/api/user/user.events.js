@@ -4,7 +4,9 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+import {
+  EventEmitter
+} from 'events';
 var UserEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
@@ -18,7 +20,7 @@ var events = {
 
 // Register the event emitter to the model events
 function registerEvents(User) {
-  for(var e in events) {
+  for (var e in events) {
     let event = events[e];
     User.post(e, emitEvent(event));
   }
@@ -31,5 +33,7 @@ function emitEvent(event) {
   };
 }
 
-export {registerEvents};
+export {
+  registerEvents
+};
 export default UserEvents;
