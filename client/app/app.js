@@ -26,13 +26,14 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
-import ModeratorComponent from '../components/moderator/moderator.component';
+import moderator from '../components/moderator/moderator.component';
+import developer from '../components/developer/developer.component';
 
 import './app.scss';
 
 angular.module('strowApplyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
     uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-    socket, util, ModeratorComponent, builder
+    socket, util, moderator, builder, developer
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
