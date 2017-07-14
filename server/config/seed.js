@@ -11,12 +11,12 @@ import config from './environment/';
 export default function seedDatabaseIfNeeded() {
   if(config.seedDB) {
     Description.find({}).remove()
-      .then(() => {
-/*        let Description = Description.create({
+/*      .then(() => {
+        let Description = Description.create({
           desc: 'Test'
-        });*/
+        });
         return Description;
-      })
+      })*/
       .then(() => console.log('finished populating Descriptions'))
       .catch(err => console.log('error populating Descriptions', err));
 
