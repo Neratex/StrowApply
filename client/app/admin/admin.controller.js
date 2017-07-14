@@ -2,7 +2,6 @@
 
 export default class AdminController {
   users: Object[];
-  desc = String;
 
   /*@ngInject*/
   constructor(User) {
@@ -13,9 +12,5 @@ export default class AdminController {
   delete(user) {
     user.$remove();
     this.users.splice(this.users.indexOf(user), 1);
-  }
-
-  updateDescription(description) {
-    this.desc = description;
   }
 }
