@@ -26,6 +26,7 @@ export function isAuthenticated() {
         req.headers.authorization = `Bearer ${req.cookies.token}`;
       }
       validateJwt(req, res, next);
+      return null;
     })
     // Attach user to request
     .use(function(req, res, next) {
@@ -36,6 +37,7 @@ export function isAuthenticated() {
           }
           req.user = user;
           next();
+          return null;
         })
         .catch(err => next(err));
     });

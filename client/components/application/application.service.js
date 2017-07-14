@@ -2,7 +2,6 @@
 
 import * as _ from 'lodash';
 
-// @flow
 class _Application {
   name: string = '';
   age: string = '';

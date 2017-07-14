@@ -7,6 +7,6 @@ import * as controller from './description.controller';
 
 var router = new Router();
 
-router.post('/', controller.description);
+router.get('/', controller.description);
 
 module.exports = router;
