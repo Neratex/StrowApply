@@ -21,16 +21,18 @@ import account from './account';
 import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
+import builder from '../components/builder/builder.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import ModeratorComponent from '../components/moderator/moderator.component';
 
 import './app.scss';
 
 angular.module('strowApplyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
     uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-    socket, util
+    socket, util, ModeratorComponent, builder
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

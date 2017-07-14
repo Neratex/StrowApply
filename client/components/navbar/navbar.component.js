@@ -4,19 +4,24 @@
 import angular from 'angular';
 
 export class NavbarComponent {
-  menu = [{
+  menu = [
+    {
     title: 'Home',
     state: 'main'
-  }, {
+  },
+  {
     title: 'Developer',
     state: 'developer'
-  }, {
+  },
+  {
     title: 'Moderator',
     state: 'moderator'
-  }, {
+  },
+  {
     title: 'Builder',
     state: 'builder'
-  }];
+  }
+];
 
   isLoggedIn: Function;
   isAdmin: Function;
