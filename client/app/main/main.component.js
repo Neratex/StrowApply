@@ -14,6 +14,7 @@ export class MainController {
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('description');
+      socket.unsyncUpdates('application');
     });
   }
 
@@ -21,6 +22,7 @@ export class MainController {
     this.$http.get('/api/description').then(r => {
       this.desc = r.desc;
       this.socket.syncUpdates('description', this.desc);
+      this.socket.syncUpdates('application', null);
     });
   }
 

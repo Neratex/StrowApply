@@ -3,17 +3,17 @@ const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 import routes from './developer.routes';
 
-type Apply = {
-  name: string;
-  old: string;
-  email: string;
-  you: string;
-  times: string;
-  whyyou: string;
-  examples: string;
-};
-
 export class DeveloperController {
+  Apply = {
+    name: string,
+    old: string,
+    email: string,
+    you: string,
+    times: string,
+    whyyou: string,
+    examples: string
+  };
+
   apply: Apply = {
     name: '',
     old: '',

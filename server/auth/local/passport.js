@@ -3,7 +3,7 @@ import {
   Strategy as LocalStrategy
 } from 'passport-local';
 
-function localAuthenticate(User, email, password, done) {
+function localApplication(Application, email, password, done) {
   User.findOne({
       email: email.toLowerCase()
     }).exec()
