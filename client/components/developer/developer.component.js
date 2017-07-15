@@ -4,6 +4,9 @@ const uiRouter = require('angular-ui-router');
 import routes from './developer.routes';
 
 export class DeveloperController {
+}
+
+export class DeveloperComponent {
   Apply = {
     name: string,
     old: string,
@@ -23,6 +26,7 @@ export class DeveloperController {
     whyyou: '',
     examples: ''
   };
+
   submitted = false;
   Application;
   $state;
@@ -60,11 +64,6 @@ export class DeveloperController {
         });
     }
   }
-}
-
-export class DeveloperComponent {
-  /*@ngInject*/
-  constructor() {}
 }
 
 export default angular.module('strowApplyApp.developer', [uiRouter])
